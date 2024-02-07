@@ -1,0 +1,36 @@
+{% extends 'base.html' %}
+{% block title %}
+about
+{% endblock %}
+
+{% block content %}
+<h1>about page</h1>
+<p>this is all info about project </p>
+{{ my_html|safe }}
+{{ my_html|striptags }}
+<div>
+    {{ my_html|slugify }}
+</div>
+{{ my_html|striptags|slugify }}
+
+
+<h2> {{ job|capfirst }} </h2>
+<h2> {{ job|title }} </h2>
+<h2> {{ job|capfirst|title }}</h2>
+
+<ul>
+    {% for i in my_list %}
+        {% if i == 5 %}
+            <li>{{ forloop.counter }} - {{ i|add:10 }}</li>
+        {% elif i == "Abc" %}
+            <li> this is not the network </li>    
+        {% else %}
+            <li> {{ forloop.counter }}-{{ i }}</li>
+        {% endif %}    
+    {% endfor %}
+</ul>
+
+{% endblock content %}
+
+
+
