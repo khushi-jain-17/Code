@@ -10,13 +10,8 @@ product_details
 {{ object.price }}
 {{ object.summary }}
 {{ object.featured }}
-<p>
-    {% if object.description != None and object.description != '' %}
-        {{ object.description }}
-    {% else %}
-        description coming soon
-    {% endif %}    
-</p>
+{{ object.description }}
+
 
 {% endblock %}
 
