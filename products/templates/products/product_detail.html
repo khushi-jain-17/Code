@@ -1,17 +1,18 @@
 {% extends 'base.html' %}
+
 {% block title %}
 product_details
 {% endblock %}
 
 {% block content %}
 
-<h1> Item </h1>
-<h1> {{ object.title }} </h1>
-{{ object.price }}
-{{ object.summary }}
-{{ object.featured }}
-{{ object.description }}
+<h1> Product - {{ object.id }} </h1>
 
+<h1> {{ object.title }} </h1>
+<p> {{ object.price }} </p>
+<p> {{ object.summary }} </p>
+<p> {{ object.featured }} </p>
+<p> {{ object.description }} </p>
 
 {% endblock %}
 

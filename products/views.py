@@ -27,6 +27,16 @@ def product_detail(request,my_id):
     }
     return render(request,"products/product_detail.html",context)
 
+def product_update(request,my_id):
+    obj=get_object_or_404(Product,id=my_id)
+    form=ProductForm(request.POST,instance=obj)
+    if form.is_valid():
+        form.save()
+    context = {
+        'form' : form 
+    }    
+    return render(request,"products/product_update.html",context)
+
 def product_delete(request,my_id):
     obj=get_object_or_404(Product,id=my_id)
     if request.method == "POST":
